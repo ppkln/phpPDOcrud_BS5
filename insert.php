@@ -11,7 +11,7 @@
         $allow = array('jpg','jpeg','png');//เช็คว่าต้องเป็นไฟล์ที่นามสกุสต่อไปนี้เท่านั้น
         $extension = explode('.', $img['name']);
         $fileActExt = strtolower(end($extension));
-        $fileNew = rand() . "." . $fileActExt;  // ฟังก์ชันสุ่มค่าเป็นตัวเลขเพื่อเอามาใช้เป็นชื่อไฟล์ภาพที่เราอัพโหลด
+        $fileNew = mktime(date('H'), date('i'), date('s'),date('m'), date('d'), date('Y')) . "PPK." . $fileActExt; // ตั้งชื่อใหม่ให้ไฟล์ภาพที่เราอัพโหลด ด้วยการประยุกต์ใช้รูปแบบของวันเวลาปัจจุบันมากำหนดเป็นชื่อ
         $filePath = "uploads/".$fileNew;
 
         if(in_array($fileActExt,$allow)){
