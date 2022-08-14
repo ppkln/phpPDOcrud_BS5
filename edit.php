@@ -16,7 +16,7 @@
             $allow = array('jpg','jpeg','png');
             $extension = explode('.', $img['name']);
             $fileActExt = strtolower(end($extension));
-            $fileNew = rand() . "." . $fileActExt;  // rand function create the rand number
+            $fileNew = rand() . "." . $fileActExt;  // ฟังก์ชันสุ่มค่าเป็นตัวเลขเพื่อเอามาใช้เป็นชื่อไฟล์ภาพที่เราอัพโหลด
             $filePath = "uploads/".$fileNew;
 
             if(in_array($fileActExt,$allow)){
