@@ -8,7 +8,6 @@
         $email = $_POST['email'];
         $position = $_POST['position'];
         $img = $_FILES['img'];
-
         $img2 = $_POST['img2'];
         $upload = $_FILES['img']['name'];
 
@@ -22,6 +21,8 @@
             if(in_array($fileActExt,$allow)){
                 if($img['size'] > 0 && $img['error']==0 ){
                     move_uploaded_file($img['tmp_name'],$filePath);
+                    $pathImgDelete = "uploads/".$img2;
+                    unlink($pathImgDelete);
                 }
             }
         } else {

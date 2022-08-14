@@ -4,10 +4,15 @@
 
     if(isset($_GET['delete'])){
         $delete_id = $_GET['delete'];
+        $imgName = $_GET['imgName'];
         $deletestmt = $conn->query("DELETE FROM users WHERE id=$delete_id");
         $deletestmt->execute();
 
         if($deletestmt){
+            if($imgName){
+                $pathImgDelete = "uploads/".$imgName;
+                unlink($pathImgDelete);
+            }
             echo "<script>alert('Data has been deleted successfully.')</script>";
             $_session['success']= "Data has been deleted successfully.";
             header("refresh:2, url:index.php");
@@ -123,7 +128,7 @@
                     <td width="250px" ><img width="100%" src="uploads/<?= $user['img'];?>" class="rounded"></td>
                     <td class="text-center">
                         <a href="edit.php?id=<?= $user['id']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="?delete=<?= $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this data?');">Delete</a>
+                        <a href="?delete=<?= $user['id']; ?>&imgName=<?= $user['img'] ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this data?');">Delete</a>
                     </td>
             </tr>
             <?php 
