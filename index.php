@@ -39,31 +39,31 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+        <h5 class="modal-title" id="exampleModalLabel">เพิ่มผู้ใช้</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="insert.php" method="post" enctype="multipart/form-data">
           <div class="mb-3">
-            <label for="fullname" class="col-form-label">Fullname:</label>
+            <label for="fullname" class="col-form-label">ชื่อ - สกุล :</label>
             <input type="text" required class="form-control" name="fullname">
           </div>
           <div class="mb-3">
-            <label for="email" class="col-form-label">email:</label>
+            <label for="email" class="col-form-label">e-mail:</label>
             <input type="email" required class="form-control" name="email">
           </div>
           <div class="mb-3">
-            <label for="position" class="col-form-label">Position:</label>
+            <label for="position" class="col-form-label">ตำแหน่ง :</label>
             <input type="text" required class="form-control" name="position">
           </div>
           <div class="mb-3">
-            <label for="img" class="col-form-label">image:</label>
+            <label for="img" class="col-form-label">ภาพ :</label>
             <input type="file" required class="form-control" id="imgInput" name="img">
             <img width="100%" id="previewImg" alt="">
           </div>
           <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" name="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        <button type="submit" name="submit" class="btn btn-success">ตกลง</button>
       </div>
         </form>
       </div>
@@ -78,7 +78,7 @@
             <h1>ยินดีต้อนรับสู่ LNcompany</h1>
         </div>
         <div class="col-md-6 d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">Add User</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">เพิ่มผู้ใช้</button>
         </div>
     </div>
     <?php if(isset($_session['success'])){?>
@@ -127,8 +127,8 @@
                     <td class="text-center"><?= $user['position']; ?></td>
                     <td width="250px" ><img width="100%" src="uploads/<?= $user['img'];?>" class="rounded"></td>
                     <td class="text-center">
-                        <a href="edit.php?id=<?= $user['id']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="?delete=<?= $user['id']; ?>&imgName=<?= $user['img'] ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this data?');">Delete</a>
+                        <a href="edit.php?id=<?= $user['id']; ?>" class="btn btn-warning">แก้ไข</a>
+                        <a href="?delete=<?= $user['id']; ?>&imgName=<?= $user['img'] ?>" class="btn btn-danger" onclick="return confirm('Do you want to delete this data?');">ลบ</a>
                     </td>
             </tr>
             <?php 

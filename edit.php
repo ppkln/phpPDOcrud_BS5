@@ -64,7 +64,7 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1>Edit Data</h1>
+    <h1>แก้ไขข้อมูล</h1>
     <hr>
     <form action="edit.php" method="post" enctype="multipart/form-data">
         <?php 
@@ -76,27 +76,28 @@
             }
         ?>
             <div class="mb-3">
-                <label for="fullname" class="col-form-label">Fullname:</label>
+                <h2><label for="email" class="col-form-label">e-mail: <?= $data['email']; ?></label></h2>
+                <input type="hidden" readonly value="<?= $data['email']; ?>"  class="form-control" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="fullname" class="col-form-label">ชื่อ - สกุล :</label>
                 <input type="text" value="<?= $data['Fullname']; ?>" required class="form-control" name="fullname">
                 <input type="hidden" value="<?= $data['id']; ?>" required class="form-control" name="id">
                 <input type="hidden" value="<?= $data['img']; ?>" required class="form-control" name="img2">
             </div>
+            
             <div class="mb-3">
-                <label for="email" class="col-form-label">email:</label>
-                <input type="email" readonly value="<?= $data['email']; ?>"  class="form-control" name="email">
-            </div>
-            <div class="mb-3">
-                <label for="position" class="col-form-label">Position:</label>
+                <label for="position" class="col-form-label">ตำแหน่ง :</label>
                 <input type="text" value="<?= $data['position']; ?>" required class="form-control" name="position">
             </div>
             <div class="mb-3">
-                <label for="img" class="col-form-label">image:</label>
+                <label for="img" class="col-form-label">ภาพ :</label>
                 <input type="file"  class="form-control" id="imgInput" name="img">
                 <img width="100%" src="uploads/<?= $data['img']; ?>" id="previewImg" alt="">
             </div>
             <div class="modal-footer">
-                <a class="btn btn-secondary me-2" href="index.php">Go Back</a>
-                <button type="submit" name="update" class="btn btn-success me-2">Update</button>
+                <a class="btn btn-secondary me-2" href="index.php">หน้าหลัก</a>
+                <button type="submit" name="update" class="btn btn-success me-2">แก้ไขข้อมูล</button>
             </div>
         </form>
 
