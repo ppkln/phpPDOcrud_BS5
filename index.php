@@ -94,7 +94,7 @@
     <?php } ?>
 
     <!-- ส่วนแสดงรายการข้อมูล -->
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th scope="col" class="text-center">รหัสสมาชิก</th>

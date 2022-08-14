@@ -8,10 +8,10 @@
         $position = $_POST['position'];
         $img = $_FILES['img'];
 
-        $allow = array('jpg','jpeg','png');
+        $allow = array('jpg','jpeg','png');//เช็คว่าต้องเป็นไฟล์ที่นามสกุสต่อไปนี้เท่านั้น
         $extension = explode('.', $img['name']);
         $fileActExt = strtolower(end($extension));
-        $fileNew = rand() . "." . $fileActExt;  // rand function create the rand number
+        $fileNew = rand() . "." . $fileActExt;  // สุ่มตั้งชื่อไฟล์
         $filePath = "uploads/".$fileNew;
 
         if(in_array($fileActExt,$allow)){
