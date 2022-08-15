@@ -59,7 +59,7 @@
           <div class="mb-3">
             <label for="img" class="col-form-label">ภาพ :</label>
             <input type="file" required class="form-control" id="imgInput" name="img">
-            <img width="100%" id="previewImg" alt="">
+            <img width="100%"  id="previewImg" alt="">
           </div>
           <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
@@ -92,14 +92,14 @@
     <?php if(isset($_session['error'])){?>
         <div class="alert alert-danger">
             <?php 
-                echo $session['error'];
+                echo $_session['error'];
                 unset($_session['error']);
             ?>
         </div>
     <?php } ?>
 
     <!-- ส่วนแสดงรายการข้อมูล -->
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered mt-5">
         <thead>
             <tr>
                 <th scope="col" class="text-center">รหัสสมาชิก</th>
@@ -141,7 +141,7 @@
 </div>
 
 <!-- เรียกใช้งาน script เพื่อสามารถแสดงภาพตัวอย่างออกทางหน้าจอได้ -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <!-- คำสั่งแสดงตัวอย่างของภาพ -->
 <script>
     let imgInput = document.getElementById('imgInput');
