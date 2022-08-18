@@ -20,9 +20,9 @@
 
             if(in_array($fileActExt,$allow)){
                 if($img['size'] > 0 && $img['error']==0 ){
-                    move_uploaded_file($img['tmp_name'],$filePath);
+                    move_uploaded_file($img['tmp_name'],$filePath);//คำสั่ง move_uploaded_file() คือคำสั่ง upload ไฟล์รูป
                     $pathImgDelete = "uploads/".$img2;
-                    unlink($pathImgDelete);
+                    unlink($pathImgDelete); //คำสั่ง unlink() คือคำสั่งให้ลบภาพที่อยู่ใน path ที่ระบุ
                 }
             }
         } else {

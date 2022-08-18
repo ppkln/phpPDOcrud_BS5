@@ -58,7 +58,7 @@
           </div>
           <div class="mb-3">
             <label for="img" class="col-form-label">ภาพ :</label>
-            <input type="file" required class="form-control" id="imgInput" name="img">
+            <input type="file" required class="form-control" id="imgInput" name="img" accept="image/png, image/gif, image/jpeg">
             <img width="100%"  id="previewImg" alt="">
           </div>
           <div class="modal-footer">

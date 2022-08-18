@@ -24,7 +24,7 @@
 
             if(in_array($fileActExt,$allow)){
                 if($img['size'] > 0 && $img['error']==0 ){
-                    if (move_uploaded_file($img['tmp_name'],$filePath)){
+                    if (move_uploaded_file($img['tmp_name'],$filePath)){ //คำสั่ง move_uploaded_file() คือคำสั่ง upload ไฟล์รูป
                         $sql = $conn->prepare("INSERT INTO users(Fullname, email, position, img) VALUES(:fullname, :email, :position, :img)");
                         $sql->bindParam(":fullname",$fullname);
                         $sql->bindParam(":email",$email);
